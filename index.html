@@ -13,25 +13,30 @@
         body, html {
             width: 100%;
             height: 100%;
-            overflow: hidden;
-            background-color: #ffffff; /* Forces a clean background under your layout */
+            overflow-x: hidden; /* Blocks horizontal page breaking */
+            background-color: #ffffff;
         }
-        .resume-container {
+        .resume-wrapper {
             width: 100%;
             height: 100vh;
             display: flex;
             justify-content: center;
+            background-color: #ffffff;
         }
         iframe {
-            width: 100%;
-            max-width: 900px; /* Locks your resume structure at an ideal, highly legible reading width */
-            height: 100%;
+            /* This forces the browser text engine to draw 125% larger relative to standard desktop width */
+            width: 125vw; 
+            height: 125vh;
+            
+            /* This scales down the layout box itself without compressing the underlying text resolution */
+            transform: scale(0.8); 
+            transform-origin: top center;
             border: none;
         }
     </style>
 </head>
 <body>
-    <div class="resume-container">
+    <div class="resume-wrapper">
         <iframe 
             src="VictorSoare-Resume.pdf#toolbar=0&navpanes=0&view=FitH" 
             title="Victor Soare Resume">
