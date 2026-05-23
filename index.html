@@ -12,45 +12,18 @@
             height: 100%;
             overflow: hidden;
             background-color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
-        /* Forces the container to fill the screen */
-        .resume-container {
+        iframe {
             width: 100%;
             height: 100%;
             border: none;
-        }
-        /* Mobile/Fallback layout if the browser forces a download */
-        .fallback-view {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #0066cc;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            margin-top: 15px;
+            display: block;
         }
     </style>
 </head>
 <body>
 
-    <iframe class="resume-container" src="resume.pdf" title="Victor Soare Resume">
-        <div class="fallback-view">
-            p>Your browser doesn't support inline PDFs.</p>
-            <a class="btn" href="resume.pdf" download>Download Resume PDF</a>
-        </div>
-    </iframe>
+    <iframe src="resume.pdf#toolbar=0&navpanes=0" title="Victor Soare Resume"></iframe>
 
 </body>
 </html>
