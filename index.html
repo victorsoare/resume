@@ -3,32 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Victor Soare | Resume</title>
+    <title>Victor Soare - Resume</title>
     <style>
-        html, body {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #ffffff;
+            background-color: #ffffff; /* Forces a clean background under your layout */
+        }
+        .resume-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
         }
         iframe {
             width: 100%;
+            max-width: 900px; /* Locks your resume structure at an ideal, highly legible reading width */
             height: 100%;
             border: none;
-            display: block;
         }
     </style>
 </head>
 <body>
-
-<div style="width: 100%; height: 100vh; overflow-y: auto; display: flex; justify-content: center; background-color: #525659;">
-    <iframe 
-        src="VictorSoare-Resume.pdf#toolbar=0&navpanes=0" 
-        title="Victor Soare Resume"
-        style="width: 120%; height: 120vh; border: none;">
-    </iframe>
-</div>
+    <div class="resume-container">
+        <iframe 
+            src="VictorSoare-Resume.pdf#toolbar=0&navpanes=0&view=FitH" 
+            title="Victor Soare Resume">
+        </iframe>
+    </div>
 </body>
 </html>
