@@ -11,22 +11,46 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #525659; /* Matches standard PDF viewer background */
+            background-color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
-        object {
+        /* Forces the container to fill the screen */
+        .resume-container {
             width: 100%;
             height: 100%;
             border: none;
+        }
+        /* Mobile/Fallback layout if the browser forces a download */
+        .fallback-view {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #0066cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 15px;
         }
     </style>
 </head>
 <body>
 
-    <object data="Victor Soare - Resume - Senior PM.pdf" type="application/pdf">
-        <p>Your browser does not support embedded PDFs. 
-           <a href="resume.pdf">Click here to download the PDF directly.</a>
-        </p>
-    </object>
+    <iframe class="resume-container" src="resume.pdf" title="Victor Soare Resume">
+        <div class="fallback-view">
+            p>Your browser doesn't support inline PDFs.</p>
+            <a class="btn" href="resume.pdf" download>Download Resume PDF</a>
+        </div>
+    </iframe>
 
 </body>
 </html>
