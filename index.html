@@ -1,9 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="refresh" content="0; url=VictorSoare-Resume.pdf" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Victor Soare - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #ffffff; /* Forces a clean background under your layout */
+        }
+        .resume-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+        iframe {
+            width: 100%;
+            max-width: 900px; /* Locks your resume structure at an ideal, highly legible reading width */
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
+    <div class="resume-container">
+        <iframe 
+            src="VictorSoare-Resume.pdf#toolbar=0&navpanes=0&view=FitH" 
+            title="Victor Soare Resume">
+        </iframe>
+    </div>
 </body>
 </html>
