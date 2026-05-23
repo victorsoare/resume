@@ -1,0 +1,458 @@
+/* =========================================================
+   Victor Soare — Resume Stylesheet
+   Color palette mirrors the source PDF:
+     - Navy headings:   #1F3A6E
+     - Orange accent:   #E97A2C
+     - Body text:       #3D3D3D / #555
+     - Soft borders:    #E5E7EB
+   ========================================================= */
+
+:root {
+  --navy:        #1F3A6E;
+  --orange:      #E97A2C;
+  --text:        #2E2E2E;
+  --text-muted:  #5F6368;
+  --border:      #D9DCE0;
+  --bg:          #FFFFFF;
+  --page-bg:     #F2F3F5;
+  --chip-bg:     #FFFFFF;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: 'Source Sans 3', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+a.link { color: var(--navy); text-decoration: underline; font-weight: 600; }
+
+/* ---------- Page container ---------- */
+.resume {
+  max-width: 1040px;
+  margin: 32px auto;
+  background: var(--bg);
+  padding: 52px 64px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+}
+
+/* ---------- Download Button (in header) ---------- */
+.header-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.name-block {
+  flex: 1;
+  min-width: 0;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--orange);
+  color: #fff !important;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 11px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 2px 6px rgba(233, 122, 44, 0.25);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.download-btn:hover {
+  background: #D26A1F;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(233, 122, 44, 0.35);
+}
+
+.download-btn:active {
+  transform: translateY(0);
+}
+
+.dl-ico {
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* ---------- Header ---------- */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.header-photo {
+  flex: 0 0 110px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--navy) 0%, #2A4A8A 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(31, 58, 110, 0.18);
+  border: 3px solid #fff;
+  outline: 1px solid var(--border);
+}
+
+.header-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-placeholder {
+  display: none;
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+.header-photo.no-photo .photo-placeholder {
+  display: block;
+}
+
+.header-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--orange);
+  margin-top: 4px;
+  margin-bottom: 14px;
+}
+
+.contact {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.contact li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contact .ico {
+  color: var(--orange);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* ---------- Section ---------- */
+.section {
+  margin-top: 26px;
+}
+
+.section-title {
+  color: var(--navy);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+}
+
+.subgroup-title {
+  color: var(--orange);
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 14px;
+  margin-bottom: 10px;
+}
+
+.summary {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ---------- Key Achievements ---------- */
+.achievements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 36px;
+  margin-top: 4px;
+}
+
+.achievement {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.achievement-icon {
+  flex: 0 0 28px;
+  height: 28px;
+  width: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange);
+  line-height: 1;
+}
+
+.achievement-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.achievement-title {
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.achievement-text {
+  font-size: 14.5px;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+/* ---------- Skills (chip / pill row) ---------- */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin-bottom: 6px;
+}
+
+.skill {
+  display: inline-block;
+  padding: 6px 13px;
+  background: var(--chip-bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+/* ---------- Timeline (Experience / Education) ---------- */
+.timeline {
+  position: relative;
+}
+
+.job {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 24px;
+  position: relative;
+  padding-left: 0;
+  padding-bottom: 20px;
+}
+
+/* Vertical line + dot — drawn on the right edge of the date column */
+.job::before {
+  content: "";
+  position: absolute;
+  left: 138px;          /* aligns with the gap between date and content */
+  top: 8px;
+  bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+
+.job::after {
+  content: "";
+  position: absolute;
+  left: 134px;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  background: var(--navy);
+  border-radius: 50%;
+}
+
+.job:last-child::before {
+  /* Stop the line at the last item for a cleaner look */
+  bottom: auto;
+  height: 0;
+}
+
+.job-date {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text);
+  padding-top: 2px;
+  text-align: left;
+}
+
+.job-date-sub {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.job-content {
+  padding-left: 16px;
+}
+
+.job-title {
+  font-size: 16.5px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+
+.job-company {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--orange);
+  margin-bottom: 4px;
+}
+
+.job-link {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.job-link .ico {
+  color: var(--orange);
+}
+
+.job-desc {
+  font-size: 14.5px;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.55;
+}
+
+.bullets {
+  list-style: none;
+  padding-left: 0;
+}
+
+.bullets li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 14.5px;
+  color: var(--text);
+  line-height: 1.55;
+  margin-bottom: 5px;
+}
+
+.bullets li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* ---------- References ---------- */
+.references {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 36px;
+}
+
+.ref-name {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+
+.ref-role {
+  font-weight: 400;
+  color: var(--text);
+}
+
+.ref-phone {
+  font-size: 14px;
+  color: var(--text);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px) {
+  .resume { padding: 28px 22px; margin: 12px; }
+  .name { font-size: 30px; }
+  .contact { gap: 10px 14px; }
+  .achievements { grid-template-columns: 1fr; }
+  .references { grid-template-columns: 1fr; }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    text-align: left;
+  }
+  .header-photo {
+    flex: 0 0 90px;
+    width: 90px;
+    height: 90px;
+  }
+  .header-top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .download-btn {
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .job {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .job::before, .job::after { display: none; }
+  .job-content { padding-left: 0; }
+  .job-date { color: var(--orange); font-weight: 700; }
+}
+
+/* ---------- Print ---------- */
+@media print {
+  body { background: #fff; }
+  .download-btn { display: none; }
+  .resume {
+    box-shadow: none;
+    margin: 0;
+    padding: 24px 28px;
+    max-width: 100%;
+  }
+  .section { page-break-inside: avoid; }
+  .job { page-break-inside: avoid; }
+}
